@@ -13,3 +13,18 @@ public class ProfesorTiempoCompleto extends Profesor{
         this.aniosExperiencia = aniosExperiencia;
     }
 
+    @Override
+    public double calcularSalario(){
+        final double factorExperiencia = 1.10;
+        return salarioBase * (aniosExperiencia * factorExperiencia);
+    }
+    @Override
+    public String getTipo(){
+        return "Tiempo completo";
+    }
+    
+    @Override
+    public String toString(){
+        return super .toString() + String.format(" | Experiencia: %.1f años", aniosExperiencia);
+    }
+}
