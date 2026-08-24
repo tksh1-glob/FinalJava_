@@ -22,7 +22,7 @@ public class ProfesorTiempoCompleto extends Profesor{
     public String getTipo(){
         return "Tiempo completo";
     }
-    
+
     @Override
     public String toString(){
         return super .toString() + String.format(" | Experiencia: %.1f años", aniosExperiencia);
