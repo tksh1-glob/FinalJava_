@@ -3,6 +3,7 @@ package com.universidad.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Curso {
 
     private static int contadorCursos = 0;
@@ -61,5 +62,20 @@ public class Curso {
     public List<Estudiante> getEstudiantes() {
         return estudiantes;
     }
-    
+
+    public void agregarEstudiante(Estudiante estudiante) {
+        if (!estudiantes.contains(estudiante)) {
+            estudiantes.add(estudiante);
+        }
+    }
+
+    public boolean tieneEstudiante(String idEstudiante) {
+        return estudiantes.stream().anyMatch(e -> e.getId().equalsIgnoreCase(idEstudiante));
+    }
+
+    @Override
+    public String toString() {
+        return String.format("[#%d] %-15s | Salón: %-10s | Profesor: %s | Estudiantes inscritos: %d",
+                id, nombre, salon, profesor != null ? profesor.getNombre() : "N/A", estudiantes.size());
+    }
 }
