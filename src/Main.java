@@ -1,15 +1,19 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+package com.universidad;
+
+import com.universidad.io.ConsolaIO;
+import com.universidad.gestion.Universidad;
+
+/**
+ * Punto de entrada de la aplicación.
+ * Conecta la capa de gestión (Universidad) con la capa de IO (ConsolaIO),
+ * y carga los datos mínimos de ejemplo requeridos.
+ */
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Universidad universidad = new Universidad("Mi Universidad");
+        universidad.cargarDatosDeEjemplo();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        ConsolaIO consola = new ConsolaIO(universidad);
+        consola.ejecutar();
     }
 }
