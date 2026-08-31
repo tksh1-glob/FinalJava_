@@ -1,10 +1,4 @@
-# Diagrama de Diseño (Diagrama de Clases UML)
 
-> GitHub renderiza los diagramas Mermaid automáticamente al ver este archivo
-> en github.com. También puedes pegar el bloque de código en
-> https://mermaid.live para exportarlo como PNG/SVG.
-
-```mermaid
 classDiagram
     class Profesor {
         <<abstract>>
